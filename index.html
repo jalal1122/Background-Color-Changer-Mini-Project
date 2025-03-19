@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: lightgrey;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #000000;
+        color: #fff;
+        font-weight: bolder;
+        font-size: 25px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: inset 0 0 10px #bababa;
+        box-shadow: 0 0 10px #bababa;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: #383838;
+        transform: scale(1.1);
+      }
+
+      button:active {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <button>Change</button>
+    <script>
+      let button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        let color = "#"
+        let hex = "0123456789ABCDEF"
+        for(let i = 0; i<6; i++){
+            color += hex[Math.floor(Math.random()* 16)]
+        }
+        document.body.style.backgroundColor = color
+      });
+    </script>
+  </body>
+</html>
